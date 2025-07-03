@@ -1,0 +1,627 @@
+/* Responsive layout using Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    main {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    section, article {
+        flex: 1 1 0;
+    }
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Base styles for accessibility */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Paragraph font size options */
+p {
+    font-size: 1rem;
+    margin-bottom: 1em;
+}
+
+.p-rem {
+    font-size: 1.25rem;
+}
+
+.p-em {
+    font-size: 1.25em;
+}
+
+a {
+    color: #005fcc;
+    text-decoration: underline;
+}
+
+a:focus, a:hover {
+    outline: 2px solid #005fcc;
+    background: #e6f0fa;
+}
+
+header, nav, main, section, article, footer {
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background: #003366;
+    color: #fff;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #003366;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    background: transparent;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+nav a:focus, nav a:hover {
+    background: #005fcc;
+    color: #fff;
+    outline: 2px solid #fff;
+}
+
+section, article {
+    background: #f9f9f9;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+section:hover, article:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    border-color: #005fcc;
+}
+
+h2 {
+    color: #003366;
+    font-size: 1.5rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+img:hover,
+img:focus {
+    transform: scale(1.03);
+    border-color: #005fcc;
+}
+
+form,
+section,
+article {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+label,
+legend {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+form textarea:focus {
+    border-color: #005fcc;
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0;
+}
+
+input[type="radio"] {
+    margin: 0;
+    vertical-align: middle;
+}
+
+button[type="submit"] {
+    background: #003366;
+    color: #fff;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:focus, button[type="submit"]:hover {
+    background: #005fcc;
+    outline: 2px solid #003366;
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px rgba(0,95,204,0.15);
+}
+
+footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0 0 6px 6px;
+    margin-top: 2rem;
+}
+
+/* Ensure sufficient color contrast and focus indicators */
+:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* Combine img hover/focus styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+img:hover,
+img:focus {
+    transform: scale(1.03);
+    border-color: #005fcc;
+}
+
+/* Combine form, section, article box styles if similar */
+form,
+section,
+article {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Combine label and legend styles */
+label,
+legend {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Combine input styles */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Combine transition for interactive elements */
+a,
+button[type="submit"],
+nav a,
+section,
+article {
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Mobile styles (default, up to 599px) */
+/* Already covered by base styles above */
+
+/* Tablet styles (600px to 1023px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+    html {
+        font-size: 105%;
+    }
+    header h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    nav ul {
+        gap: 2rem;
+    }
+    main {
+        padding: 2rem;
+    }
+}
+
+/* Desktop styles (1024px and up) */
+@media (min-width: 1024px) {
+    html {
+        font-size: 112.5%;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    nav ul {
+        gap: 2.5rem;
+    }
+    main {
+        padding: 3rem;
+    }
+    section, article {
+        margin-bottom: 2rem;
+    }
+}
+
+/* About Me section styling */
+.about-me {
+    background: #f5f8fa;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 2.5rem auto 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: left;         /* Align text to the left */
+}
+
+.about-me h2 {
+    text-align: center;       /* Center the heading */
+    font-size: 2rem;          /* Large heading */
+    margin-bottom: 1.25rem;   /* Space below heading */
+    color: #003366;
+}
+
+.about-me p {
+    font-size: 1.15rem;       /* Slightly larger text */
+    line-height: 1.7;         /* Comfortable line spacing */
+    margin-bottom: 1rem;      /* Space between paragraphs */
+    color: #222;
+}
+
+/* Projects section layout */
+.projects-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: stretch;
+    margin: 3rem auto 0 auto;
+    max-width: 1200px;
+    padding: 0 1.5rem 2.5rem 1.5rem;
+}
+
+/* Individual project card styling */
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+
+    transition: box-shadow 0.2s, transform 0.2s;
+    -webkit-transition: box-shadow 0.2s, -webkit-transform 0.2s;
+    -moz-transition: box-shadow 0.2s, -moz-transform 0.2s;
+    -o-transition: box-shadow 0.2s, -o-transform 0.2s;
+    padding: 2rem 1.5rem;
+    margin: 0;
+    flex: 1 1 320px;
+    max-width: 350px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #003366;
+}
+
+.project-card p {
+    margin-bottom: 0;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Skills list styling with icons */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto 0 auto;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: center;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1.1rem;
+    color: #003366;
+    line-height: 1.6;
+}
+
+/* Default icon */
+.skills-list li::before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+/* Custom icons for specific skills */
+.skills-list li:nth-child(1)::before { content: "🔤"; }    /* HTML5 & CSS3 */
+.skills-list li:nth-child(2)::before { content: "⚡"; }    /* JavaScript */
+.skills-list li:nth-child(3)::before { content: "📱"; }    /* Responsive Web Design */
+.skills-list li:nth-child(4)::before { content: "🔧"; }    /* Git & GitHub */
+.skills-list li:nth-child(5)::before { content: "🧩"; }    /* Problem Solving */
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Hide nav-toggle on desktop, show on mobile */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    z-index: 1001;
+}
+
+/* Show hamburger on small screens, hide nav by default */
+@media (max-width: 700px) {
+    .nav-toggle {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #003366;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+    nav ul.open {
+        display: flex;
+    }
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0.75rem;
+    }
+    header h1 {
+        font-size: 1.25rem;
+        margin: 0;
+        flex: 1;
+        text-align: left;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        background: #003366;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Desktop/tablet: Place nav under the heading */
+@media (min-width: 701px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 1.5rem 2rem;
+    }
+    header h1 {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+    nav {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    nav ul {
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        padding: 0;
+        width: auto;
+        align-items: center;
+        display: flex !important;
+    }
+}
+
+/* Enhance spacing and margins for form inputs and labels */
+form label {
+    display: inline-block;
+    min-width: 100px;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    vertical-align: top;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #005fcc;
+    outline: none;
+}
+
+form .radio-option {
+    margin-bottom: 0.75rem;
+}
+
+form button[type="submit"] {
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    background: #005fcc;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+    background: #004bbd;
+}
+
+/* Image modal styles */
+.img-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.img-modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+}

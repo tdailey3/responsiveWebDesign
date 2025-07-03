@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terry D's Page</title>
+    <meta name="description" content="Terry D's personal web page">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to my Personal Page!</h1>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+          &#9776;
+        </button>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#" tabindex="0">Home</a></li>
+                <li><a href="#about-me" tabindex="0">About</a></li>
+                <li><a href="#contact" tabindex="0">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>This is the main content of the page.</p>
+        <section id="about-me" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>Hello! I'm Terry D, a passionate learner and web enthusiast who enjoys exploring new technologies and building creative projects.</p>
+        </section>
+        <section aria-labelledby="skills-list">
+            <h2 id="skills-heading">Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5 &amp; CSS3</li>
+                <li>JavaScript</li>
+                <li>Responsive Web Design</li>
+                <li>Git &amp; GitHub</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+        <section aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <!-- Filter Dropdown -->
+            <div class="project-filter" style="margin-bottom:1.5rem;">
+                <label for="project-filter" style="font-weight:bold;">Filter Projects:</label>
+                <select id="project-filter">
+                    <option value="all">All</option>
+                    <option value="web">Web</option>
+                    <option value="app">App</option>
+                    <option value="blog">Blog</option>
+                </select>
+            </div>
+            <article class="project-card" data-type="web">
+                <figure>
+                    <img src="project1.jpg" alt="Screenshot of Portfolio Website" width="200" tabindex="0">
+                    <figcaption>Project 1: Portfolio Website</figcaption>
+                </figure>
+                <p>A personal portfolio website showcasing my skills and projects.</p>
+            </article>
+            <article class="project-card" data-type="app">
+                <figure>
+                    <img src="project2.jpg" alt="Screenshot of Task Manager App" width="200" tabindex="0">
+                    <figcaption>Project 2: Task Manager App</figcaption>
+                </figure>
+                <p>A simple task manager app to organize daily activities efficiently.</p>
+            </article>
+            <article class="project-card" data-type="blog">
+                <figure>
+                    <img src="project3.jpg" alt="Screenshot of Blog Platform" width="200" tabindex="0">
+                    <figcaption>Project 3: Blog Platform</figcaption>
+                </figure>
+                <p>A blogging platform for sharing articles and connecting with readers.</p>
+            </article>
+        </section>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <form>
+                <label for="user-name">Name:</label>
+                <input type="text" id="user-name" name="user-name" required tabindex="0" placeholder="Enter your name"><br><br>
+
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email" name="user-email" required tabindex="0" placeholder="Enter your email"><br><br>
+
+                <label for="user-message">Message:</label>
+                <textarea id="user-message" name="user-message" rows="4" cols="40" tabindex="0" placeholder="Please enter comments"></textarea><br><br>
+
+                <fieldset>
+                    <legend>Rate this site:</legend>
+                    <div class="radio-option">
+                        <input type="radio" id="rating-excellent" name="site-rating" value="Excellent">
+                        <label for="rating-excellent" tabindex="0">Excellent</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="rating-good" name="site-rating" value="Good">
+                        <label for="rating-good" tabindex="0">Good</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="rating-ok" name="site-rating" value="Ok">
+                        <label for="rating-ok" tabindex="0">Ok</label>
+                    </div>
+                </fieldset><br>
+
+                <button type="submit" id="submit-btn" tabindex="0">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Terry D</p>
+    </footer>
+</body>
+</html>
